@@ -1,4 +1,4 @@
-# न्याय AI (NYAAYAI) 🏛️⚖️
+# न्याय AI (NYAAY-AI) 🏛️⚖️
 
 ## A Bias-Aware AI Legal Assistant for India
 
@@ -199,28 +199,6 @@ OPENAI_API_KEY=your_openai_api_key
 - **Police Emergency**: 100
 - **Women Helpline**: 1091
 - **Legal Aid**: 15100
-
----
-
-## 👩‍💻 **Team - Code Divas**
-
-| Name | Role |
-|------|------|
-| **Aakriti Rajhans** | Lead Developer |
-| **Kanishka** | AI/ML Engineer |
-| **Ishita Yadav** | Frontend Developer |
-| **Anupriya** | Backend Developer |
-
----
-
-## 🤝 **Contributing**
-
-1. Fork the repository
-2. Create feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Open Pull Request
-
 ---
 
 ## 📄 **License**
