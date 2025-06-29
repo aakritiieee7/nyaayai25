@@ -1,5 +1,5 @@
 # न्याय AI (NYAAY-AI) 🏛️⚖️
-
+https://nyaayai25.vercel.app/
 ## A Bias-Aware AI Legal Assistant for India
 
 **Empowering marginalized communities with accessible legal guidance in their own language**
