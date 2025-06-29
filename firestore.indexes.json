@@ -1,0 +1,73 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "cases",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "userId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "status",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cases",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "category",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "lawyers",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "location.state",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "specializations",
+          "arrayConfig": "CONTAINS"
+        },
+        {
+          "fieldPath": "rating.average",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "ngos",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "location.headquarters.state",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "focusAreas",
+          "arrayConfig": "CONTAINS"
+        },
+        {
+          "fieldPath": "rating.average",
+          "order": "DESCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}

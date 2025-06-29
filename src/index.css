@@ -1,0 +1,691 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+Devanagari:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  /* Deep Navy Blue Palette - Primary */
+  --navy-50: #f0f4ff;
+  --navy-100: #e0e7ff;
+  --navy-200: #c7d2fe;
+  --navy-300: #a5b4fc;
+  --navy-400: #818cf8;
+  --navy-500: #6366f1;
+  --navy-600: #4f46e5;
+  --navy-700: #4338ca;
+  --navy-800: #022f78; /* Deep Navy Blue */
+  --navy-900: #011d4a;
+
+  /* Royal Blue Palette - Secondary */
+  --royal-50: #eff6ff;
+  --royal-100: #dbeafe;
+  --royal-200: #bfdbfe;
+  --royal-300: #93c5fd;
+  --royal-400: #60a5fa;
+  --royal-500: #3b82f6;
+  --royal-600: #024abf; /* Royal Blue */
+  --royal-700: #1d4ed8;
+  --royal-800: #1e40af;
+  --royal-900: #1e3a8a;
+
+  /* Medium Blue Palette - Accent */
+  --medium-blue-50: #f0f9ff;
+  --medium-blue-100: #e0f2fe;
+  --medium-blue-200: #bae6fd;
+  --medium-blue-300: #7dd3fc;
+  --medium-blue-400: #38bdf8;
+  --medium-blue-500: #0ea5e9;
+  --medium-blue-600: #0284c7;
+  --medium-blue-700: #0369a1;
+  --medium-blue-800: #075985;
+  --medium-blue-900: #0c4a6e;
+
+  /* Complementary Colors */
+  --orange-50: #fff7ed;
+  --orange-100: #ffedd5;
+  --orange-200: #fed7aa;
+  --orange-300: #fdba74;
+  --orange-400: #fb923c;
+  --orange-500: #f97316;
+  --orange-600: #ea580c;
+  --orange-700: #c2410c;
+  --orange-800: #9a3412;
+  --orange-900: #7c2d12;
+
+  /* Neutral Greys */
+  --neutral-50: #f9fafb;
+  --neutral-100: #f3f4f6;
+  --neutral-200: #e5e7eb;
+  --neutral-300: #d1d5db;
+  --neutral-400: #9ca3af;
+  --neutral-500: #6b7280;
+  --neutral-600: #4b5563;
+  --neutral-700: #374151;
+  --neutral-800: #1f2937;
+  --neutral-900: #111827;
+
+  /* White Variations */
+  --white: #ffffff;
+  --white-soft: #fefefe;
+  --white-warm: #fdfcfc;
+  --white-cool: #fcfdff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Noto Sans Devanagari', system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--neutral-800);
+  background: linear-gradient(135deg, var(--white) 0%, var(--royal-50) 25%, var(--navy-50) 75%, var(--white) 100%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+.font-display {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.font-body {
+  font-family: 'Inter', 'Noto Sans Devanagari', system-ui, sans-serif;
+  font-weight: 400;
+}
+
+.font-hindi {
+  font-family: 'Noto Sans Devanagari', 'Inter', system-ui, sans-serif;
+}
+
+/* Professional Headings with Deep Blue Tones */
+.heading-xl {
+  @apply text-5xl md:text-7xl font-display font-black leading-tight tracking-tight;
+  background: linear-gradient(135deg, var(--navy-800), var(--royal-600), var(--medium-blue-600));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heading-lg {
+  @apply text-3xl md:text-4xl font-display font-bold leading-tight;
+  color: var(--navy-800);
+}
+
+.heading-md {
+  @apply text-2xl md:text-3xl font-display font-bold leading-tight;
+  color: var(--royal-600);
+}
+
+.heading-sm {
+  @apply text-xl md:text-2xl font-display font-semibold leading-tight;
+  color: var(--navy-700);
+}
+
+/* Body Text */
+.text-body-lg {
+  @apply text-lg font-body leading-relaxed;
+  color: var(--neutral-600);
+}
+
+.text-body {
+  @apply text-base font-body leading-relaxed;
+  color: var(--neutral-600);
+}
+
+.text-caption {
+  @apply text-sm font-body;
+  color: var(--neutral-500);
+}
+
+.text-muted {
+  color: var(--neutral-400);
+}
+
+/* Professional Scrollbar with Blue Gradient */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--neutral-100);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--royal-600), var(--navy-800));
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--navy-800), var(--royal-700));
+}
+
+/* Selection with Deep Blue */
+::selection {
+  background: rgba(2, 47, 120, 0.15);
+  color: var(--navy-800);
+}
+
+/* Card Components with Depth and Texture */
+.card {
+  @apply bg-white rounded-2xl border transition-all duration-300;
+  border-color: var(--neutral-200);
+  box-shadow: 
+    0 1px 3px 0 rgba(2, 47, 120, 0.1),
+    0 1px 2px 0 rgba(2, 74, 191, 0.06);
+}
+
+.card-hover {
+  @apply hover:-translate-y-1;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  border-color: var(--royal-300);
+  box-shadow: 
+    0 10px 15px -3px rgba(2, 47, 120, 0.1),
+    0 4px 6px -2px rgba(2, 74, 191, 0.05),
+    0 0 0 1px rgba(2, 74, 191, 0.1);
+}
+
+.card-lg {
+  @apply bg-white rounded-3xl border transition-all duration-300;
+  border-color: var(--neutral-200);
+  box-shadow: 
+    0 4px 6px -1px rgba(2, 47, 120, 0.1),
+    0 2px 4px -1px rgba(2, 74, 191, 0.06);
+}
+
+/* Deep Blue Textured Cards */
+.card-navy {
+  background: linear-gradient(135deg, var(--navy-800) 0%, var(--navy-700) 100%);
+  color: var(--white);
+  border: 1px solid var(--navy-600);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-navy::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.card-royal {
+  background: linear-gradient(135deg, var(--royal-600) 0%, var(--royal-500) 100%);
+  color: var(--white);
+  border: 1px solid var(--royal-400);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-royal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%);
+  background-size: 20px 20px;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Button Components with Deep Blue Gradients */
+.btn {
+  @apply inline-flex items-center justify-center space-x-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-opacity-20;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--navy-800) 0%, var(--royal-600) 100%);
+  color: var(--white);
+  border: 1px solid var(--navy-700);
+  box-shadow: 0 4px 6px -1px rgba(2, 47, 120, 0.3);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--navy-900) 0%, var(--navy-800) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px -3px rgba(2, 47, 120, 0.4);
+}
+
+.btn-primary:focus {
+  ring-color: var(--royal-500);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, var(--neutral-600) 0%, var(--neutral-700) 100%);
+  color: var(--white);
+  border: 1px solid var(--neutral-500);
+  box-shadow: 0 4px 6px -1px rgba(107, 114, 128, 0.3);
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, var(--neutral-700) 0%, var(--neutral-800) 100%);
+  transform: translateY(-2px);
+}
+
+.btn-accent {
+  background: linear-gradient(135deg, var(--orange-600) 0%, var(--orange-700) 100%);
+  color: var(--white);
+  border: 1px solid var(--orange-500);
+  box-shadow: 0 4px 6px -1px rgba(234, 88, 12, 0.3);
+}
+
+.btn-accent:hover {
+  background: linear-gradient(135deg, var(--orange-700) 0%, var(--orange-800) 100%);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: var(--white);
+  color: var(--navy-700);
+  border: 2px solid var(--neutral-300);
+}
+
+.btn-outline:hover {
+  border-color: var(--royal-500);
+  color: var(--royal-600);
+  background: var(--royal-50);
+}
+
+/* Form Elements with Deep Blue Focus */
+.form-input {
+  @apply w-full px-4 py-3 border-2 rounded-xl transition-all duration-300 bg-white font-body;
+  border-color: var(--neutral-200);
+  color: var(--neutral-800);
+}
+
+.form-input::placeholder {
+  color: var(--neutral-400);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--royal-500);
+  box-shadow: 0 0 0 4px rgba(2, 74, 191, 0.1);
+}
+
+.form-textarea {
+  @apply form-input resize-none;
+}
+
+.form-select {
+  @apply form-input cursor-pointer;
+}
+
+/* Navigation with Deep Blue Glass Effect */
+.nav {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--neutral-200);
+  box-shadow: 0 1px 3px 0 rgba(2, 47, 120, 0.1);
+}
+
+/* Gradient Backgrounds */
+.gradient-primary {
+  background: linear-gradient(135deg, var(--navy-800) 0%, var(--royal-600) 100%);
+}
+
+.gradient-secondary {
+  background: linear-gradient(135deg, var(--neutral-600) 0%, var(--neutral-700) 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, var(--orange-600) 0%, var(--orange-700) 100%);
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, 
+    var(--white) 0%, 
+    var(--royal-50) 25%, 
+    var(--navy-50) 50%,
+    var(--medium-blue-50) 75%, 
+    var(--white) 100%);
+}
+
+.gradient-hero {
+  background: linear-gradient(135deg, 
+    var(--navy-900) 0%, 
+    var(--navy-800) 25%,
+    var(--royal-600) 75%, 
+    var(--medium-blue-600) 100%);
+}
+
+/* Textured Backgrounds */
+.texture-navy {
+  background: var(--navy-800);
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.1) 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+.texture-royal {
+  background: var(--royal-600);
+  background-image: 
+    linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%);
+  background-size: 30px 30px;
+}
+
+.texture-waves {
+  background: linear-gradient(135deg, var(--navy-800) 0%, var(--royal-600) 100%);
+  background-image: 
+    radial-gradient(ellipse at top, rgba(255, 255, 255, 0.1) 0%, transparent 70%),
+    radial-gradient(ellipse at bottom, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+}
+
+/* Professional Shadows with Blue Tints */
+.shadow-professional {
+  box-shadow: 
+    0 4px 6px -1px rgba(2, 47, 120, 0.1), 
+    0 2px 4px -1px rgba(2, 74, 191, 0.06);
+}
+
+.shadow-professional-lg {
+  box-shadow: 
+    0 10px 15px -3px rgba(2, 47, 120, 0.1), 
+    0 4px 6px -2px rgba(2, 74, 191, 0.05);
+}
+
+.shadow-professional-xl {
+  box-shadow: 
+    0 20px 25px -5px rgba(2, 47, 120, 0.1), 
+    0 10px 10px -5px rgba(2, 74, 191, 0.04);
+}
+
+/* Status Colors */
+.status-success {
+  background-color: var(--green-50);
+  color: var(--green-700);
+  border: 1px solid var(--green-200);
+}
+
+.status-warning {
+  background-color: var(--yellow-50);
+  color: var(--yellow-700);
+  border: 1px solid var(--yellow-200);
+}
+
+.status-error {
+  background-color: var(--red-50);
+  color: var(--red-700);
+  border: 1px solid var(--red-200);
+}
+
+.status-info {
+  background-color: var(--royal-50);
+  color: var(--royal-700);
+  border: 1px solid var(--royal-200);
+}
+
+/* Animations with Deep Blue Theme */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes blueGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(2, 47, 120, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(2, 74, 191, 0.5);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-blue-glow {
+  animation: blueGlow 2s ease-in-out infinite;
+}
+
+/* Utility Classes */
+.container-professional {
+  @apply max-w-7xl mx-auto px-6;
+}
+
+.section-padding {
+  @apply py-16 px-6;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  background: rgba(2, 47, 120, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--white);
+}
+
+.glass-royal {
+  background: rgba(2, 74, 191, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--white);
+}
+
+/* Focus States */
+.focus-ring {
+  @apply focus:outline-none;
+}
+
+.focus-ring:focus {
+  box-shadow: 0 0 0 4px rgba(2, 74, 191, 0.2);
+  border-color: var(--royal-500);
+}
+
+/* Hover Effects */
+.hover-lift {
+  @apply transition-all duration-300;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 
+    0 10px 15px -3px rgba(2, 47, 120, 0.1),
+    0 4px 6px -2px rgba(2, 74, 191, 0.05);
+}
+
+.hover-glow {
+  @apply transition-all duration-300;
+}
+
+.hover-glow:hover {
+  box-shadow: 
+    0 0 20px rgba(2, 47, 120, 0.3),
+    0 0 40px rgba(2, 74, 191, 0.2);
+}
+
+/* Badge Components */
+.badge {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+}
+
+.badge-primary {
+  background-color: var(--navy-100);
+  color: var(--navy-800);
+}
+
+.badge-secondary {
+  background-color: var(--neutral-100);
+  color: var(--neutral-800);
+}
+
+.badge-accent {
+  background-color: var(--orange-100);
+  color: var(--orange-800);
+}
+
+.badge-royal {
+  background-color: var(--royal-100);
+  color: var(--royal-800);
+}
+
+/* Dividers */
+.divider {
+  border-top: 1px solid var(--neutral-200);
+}
+
+.divider-blue {
+  border-top: 1px solid var(--royal-200);
+}
+
+/* Loading States */
+.loading {
+  @apply animate-pulse rounded;
+  background-color: var(--neutral-200);
+}
+
+/* Dark Theme Elements */
+.dark-card {
+  background-color: var(--navy-800);
+  color: var(--white);
+  border: 1px solid var(--navy-700);
+}
+
+.dark-nav {
+  background: rgba(2, 47, 120, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--navy-700);
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .heading-xl {
+    @apply text-4xl;
+  }
+  
+  .heading-lg {
+    @apply text-2xl;
+  }
+  
+  .heading-md {
+    @apply text-xl;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+}
+
+/* Deep Blue Pattern Overlays */
+.pattern-dots {
+  background-image: radial-gradient(circle, var(--royal-200) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.pattern-grid {
+  background-image: 
+    linear-gradient(var(--royal-200) 1px, transparent 1px),
+    linear-gradient(90deg, var(--royal-200) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.pattern-diagonal {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    var(--royal-100) 10px,
+    var(--royal-100) 20px
+  );
+}
+
+/* Depth and Layering */
+.layer-1 { z-index: 10; }
+.layer-2 { z-index: 20; }
+.layer-3 { z-index: 30; }
+.layer-4 { z-index: 40; }
+.layer-5 { z-index: 50; }
+
+/* Color Variables for JavaScript Access */
+:root {
+  --color-navy-primary: #022f78;
+  --color-royal-primary: #024abf;
+  --color-medium-blue: #0ea5e9;
+  --color-orange-accent: #f97316;
+  --color-white-base: #ffffff;
+  --color-neutral-text: #374151;
+}
